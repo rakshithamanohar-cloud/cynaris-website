@@ -1,9 +1,9 @@
 export default function Home() {
   return (
-    <section className="flex flex-col gap-12 py-10">
+    <section className="mx-auto max-w-6xl px-6 py-16">
       {/* Hero Section */}
       <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight">
+        <h1 className="text-4xl font-bold text-gray-900">
           Welcome to Cynaris Solutions
         </h1>
         <p className="mt-4 text-lg text-gray-600">
