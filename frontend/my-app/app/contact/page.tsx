@@ -1,56 +1,49 @@
 export default function ContactPage() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
-      {/* Page Heading */}
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold text-gray-900">Contact Us</h1>
-        <p className="mt-4 text-lg text-gray-600">
-          Get in touch with us for inquiries, collaborations, or support.
-        </p>
-      </div>
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <h1 className="text-3xl font-bold text-center mb-4">
+        Contact Us
+      </h1>
 
-      {/* Contact Form */}
-      <form className="mx-auto max-w-3xl space-y-6">
+      <p className="text-center text-gray-600 mb-12">
+        Get in touch with us for inquiries, collaborations, or support.
+      </p>
+
+      <form className="space-y-6">
         <div>
-          <label className="mb-2 block text-sm font-medium text-gray-700">
-            Full Name
-          </label>
+          <label className="block text-sm font-medium mb-1">Full Name</label>
           <input
             type="text"
+            className="w-full border rounded-md px-4 py-2"
             placeholder="Enter your name"
-            className="w-full rounded-md border border-gray-300 px-4 py-3 focus:border-black focus:outline-none"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-medium text-gray-700">
-            Email Address
-          </label>
+          <label className="block text-sm font-medium mb-1">Email Address</label>
           <input
             type="email"
+            className="w-full border rounded-md px-4 py-2"
             placeholder="Enter your email"
-            className="w-full rounded-md border border-gray-300 px-4 py-3 focus:border-black focus:outline-none"
           />
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-medium text-gray-700">
-            Message
-          </label>
+          <label className="block text-sm font-medium mb-1">Message</label>
           <textarea
-            rows={5}
-            placeholder="Write your message"
-            className="w-full rounded-md border border-gray-300 px-4 py-3 focus:border-black focus:outline-none"
+            className="w-full border rounded-md px-4 py-2"
+            rows={4}
+            placeholder="Enter your message"
           ></textarea>
         </div>
 
         <button
-          type="button"
-          className="rounded-md bg-black px-6 py-3 text-white transition hover:bg-gray-800"
+          type="submit"
+          className="bg-black text-white px-6 py-2 rounded-md"
         >
           Send Message
         </button>
       </form>
-    </section>
+    </main>
   );
 }

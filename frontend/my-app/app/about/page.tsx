@@ -1,39 +1,33 @@
 export default function AboutPage() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold text-gray-900">
-          About Cynaris Solutions
-        </h1>
-        <p className="mt-4 text-lg text-gray-600">
-          We deliver modern, reliable, and scalable digital solutions.
-        </p>
-      </div>
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <h1 className="text-3xl font-bold text-center mb-6">
+        About Cynaris Solutions
+      </h1>
 
-      <div className="grid gap-12 md:grid-cols-2">
+      <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+        Cynaris Solutions is committed to delivering efficient, scalable, and
+        technology-driven solutions that empower businesses in a digital-first world.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-10">
         <div>
-          <h2 className="mb-4 text-2xl font-semibold text-gray-900">
-            Who We Are
-          </h2>
-          <p className="leading-relaxed text-gray-600">
-            Cynaris Solutions is a technology-focused company dedicated to
-            building high-quality web applications. We focus on clean design,
-            performance, and user-friendly interfaces.
+          <h2 className="text-xl font-semibold mb-3">Our Mission</h2>
+          <p className="text-gray-600">
+            To provide reliable IT services and software solutions that help
+            organizations improve efficiency and achieve sustainable growth.
           </p>
         </div>
 
         <div>
-          <h2 className="mb-4 text-2xl font-semibold text-gray-900">
-            What We Do
-          </h2>
-          <p className="leading-relaxed text-gray-600">
-            We specialize in frontend development, UI design, and scalable
-            web solutions using technologies such as React, Next.js, and
-            Tailwind CSS.
+          <h2 className="text-xl font-semibold mb-3">Our Expertise</h2>
+          <p className="text-gray-600">
+            Our team focuses on web technologies, application support, and modern
+            development practices to deliver high-quality results.
           </p>
         </div>
       </div>
-    </section>
+    </main>
   );
 }
 
