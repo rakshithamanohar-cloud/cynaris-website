@@ -1,49 +1,42 @@
 export default function ContactPage() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-bold text-center mb-4">
-        Contact Us
-      </h1>
+    <main className="bg-white">
+      <section className="max-w-4xl mx-auto px-6 py-20">
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
+          Contact Us
+        </h1>
 
-      <p className="text-center text-gray-600 mb-12">
-        Get in touch with us for inquiries, collaborations, or support.
-      </p>
+        <div className="h-1 w-20 bg-blue-600 mb-6"></div>
 
-      <form className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium mb-1">Full Name</label>
+        <p className="text-gray-600 mb-10">
+          Reach out to Cynaris Solutions to discuss how we can support your
+          digital transformation journey.
+        </p>
+
+        <form className="space-y-6">
           <input
             type="text"
-            className="w-full border rounded-md px-4 py-2"
-            placeholder="Enter your name"
+            placeholder="Your Name"
+            className="w-full border rounded-lg px-4 py-3"
           />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-1">Email Address</label>
           <input
             type="email"
-            className="w-full border rounded-md px-4 py-2"
-            placeholder="Enter your email"
+            placeholder="Your Email"
+            className="w-full border rounded-lg px-4 py-3"
           />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-1">Message</label>
           <textarea
-            className="w-full border rounded-md px-4 py-2"
-            rows={4}
-            placeholder="Enter your message"
+            placeholder="Your Message"
+            className="w-full border rounded-lg px-4 py-3 h-32"
           ></textarea>
-        </div>
 
-        <button
-          type="submit"
-          className="bg-black text-white px-6 py-2 rounded-md"
-        >
-          Send Message
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
     </main>
   );
 }

@@ -1,57 +1,94 @@
 export default function ServicesPage() {
-  return (
-    <section className="px-6 py-16 max-w-6xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">Services & Solutions</h1>
+  const services = [
+    {
+      title: "Staff Augmentation",
+      description:
+        "Flexible staffing solutions that help organizations quickly scale their teams with highly skilled professionals.",
+      link: "/services/staff-augmentation",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      title: "Custom Software Development",
+      description:
+        "End-to-end software development tailored to business needs, ensuring scalability and performance.",
+      link: "/services/custom-software-development",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      title: "Scaled Agile Implementation",
+      description:
+        "Enterprise-wide agile transformation to improve collaboration, speed, and delivery outcomes.",
+      link: "/services/scaled-agile-implementation",
+      color: "from-emerald-500 to-teal-500",
+    },
+    {
+      title: "Digital Transformation Services",
+      description:
+        "Modernizing systems, processes, and experiences to help businesses stay competitive.",
+      link: "/services/digital-transformation",
+      color: "from-orange-500 to-amber-500",
+    },
+    {
+      title: "Research and Development",
+      description:
+        "Innovation-driven R&D services to explore emerging technologies and accelerate breakthroughs.",
+      link: "/services/research-and-development",
+      color: "from-indigo-500 to-violet-500",
+    },
+    {
+      title: "Offshore Delivery Center",
+      description:
+        "Cost-effective offshore teams delivering quality, scalability, and operational efficiency.",
+      link: "/services/offshore-delivery-center",
+      color: "from-rose-500 to-red-500",
+    },
+  ];
 
-      <p className="text-gray-600 mb-12">
-        We provide end-to-end technology services and business-focused solutions
-        to help organizations scale and innovate.
+  return (
+    <main className="max-w-7xl mx-auto px-6 py-20">
+      {/* Heading */}
+      <h1 className="text-4xl font-extrabold text-center text-gray-900 mb-6">
+        Our Services
+      </h1>
+
+      <p className="text-center text-gray-600 max-w-3xl mx-auto mb-16">
+        At Cynaris Solutions, we deliver innovative, scalable, and secure
+        technology services that help businesses transform and grow in a
+        digital-first world.
       </p>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-16">
-        {[
-          {
-            title: "Web Development",
-            desc: "Modern and scalable web applications using latest frameworks.",
-          },
-          {
-            title: "Application Support",
-            desc: "Reliable L1/L2 support and maintenance services.",
-          },
-          {
-            title: "Cloud Solutions",
-            desc: "Cloud migration, deployment, and infrastructure optimization.",
-          },
-          {
-            title: "Data Analytics",
-            desc: "Data-driven insights and reporting solutions.",
-          },
-          {
-            title: "IT Consulting",
-            desc: "Strategic technology consulting for business growth.",
-          },
-          {
-            title: "Staff Augmentation",
-            desc: "Skilled professionals to extend development teams.",
-          },
-        ].map((item) => (
+      {/* Services Grid */}
+      <section className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
           <div
-            key={item.title}
-            className="border rounded-xl p-6 hover:shadow-md transition"
+            key={index}
+            className="relative rounded-2xl p-[2px] hover:scale-[1.02] transition-transform"
           >
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-600 text-sm">{item.desc}</p>
+            {/* Gradient Border */}
+            <div
+              className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${service.color}`}
+            ></div>
+
+            {/* Card */}
+            <div className="relative bg-white rounded-2xl p-6 h-full">
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">
+                {service.title}
+              </h2>
+
+              <p className="text-gray-600 mb-6">
+                {service.description}
+              </p>
+
+              <a
+                href={service.link}
+                className="inline-block font-medium text-blue-600 hover:text-blue-800"
+              >
+                Learn More →
+              </a>
+            </div>
           </div>
         ))}
-      </div>
-
-      <h2 className="text-3xl font-semibold mb-4">Our Solution Approach</h2>
-      <ul className="list-disc pl-6 text-gray-600 space-y-2">
-        <li>Requirement analysis & planning</li>
-        <li>Solution design & architecture</li>
-        <li>Development & testing</li>
-        <li>Deployment & ongoing support</li>
-      </ul>
-    </section>
+      </section>
+    </main>
   );
 }
