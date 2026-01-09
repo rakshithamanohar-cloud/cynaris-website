@@ -1,32 +1,43 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="w-full border-b border-gray-200 bg-white">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <h1 className="text-xl font-semibold">Cynaris Solutions</h1>
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo.png"
+            alt="Cynaris Solutions"
+            width={150}
+            height={40}
+            priority
+          />
+        </Link>
 
-        <ul className="flex gap-6 text-sm font-medium">
-            <li>
-                <Link href="/">Home</Link>
-              </li>
-            <li>
-                <Link href="/about">About</Link>
-              </li>
-            <li>
-                <Link href="/services">Services</Link>
-              </li>
-              <li>
-                 <Link href="/case-studies">Case Studies</Link>
-              </li>
-               <li>
-                 <Link href="/careers">Careers</Link>
-              </li>
-            <li>
-                 <Link href="/contact">Contact</Link>
-              </li>
-         </ul>
-      </nav>
+        {/* Navigation */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+          <Link href="/" className="hover:text-blue-600">Home</Link>
+          <Link href="/about" className="hover:text-blue-600">About</Link>
+          <Link href="/services" className="hover:text-blue-600">Services</Link>
+          <Link href="/case-studies" className="hover:text-blue-600">
+            Case Studies
+          </Link>
+          <Link href="/careers" className="hover:text-blue-600">Careers</Link>
+          <Link href="/contact" className="hover:text-blue-600">Contact</Link>
+        </nav>
+
+        {/* CTA */}
+        <Link
+          href="/contact"
+          className="hidden md:inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition"
+        >
+          Talk to Us
+        </Link>
+      </div>
     </header>
   );
 }

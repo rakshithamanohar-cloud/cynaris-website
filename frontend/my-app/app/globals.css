@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6fafd;      /* soft light blue */
+  --foreground: #0a1931;      /* deep navy */
+
+  --primary: #1a3d63;         /* main blue */
+  --accent: #4a7fa7;          /* lighter blue */
+  --muted: #b3cfe5;           /* pastel blue */
+  --highlight: #6d28d9;       /* accent purple */
 }
 
 @theme inline {
@@ -14,13 +19,37 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a1931;
+    --foreground: #f6fafd;
   }
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    #ffffff 40%,
+    var(--muted) 100%
+  );
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+@layer utilities {
+  .bg-brand {
+    background: linear-gradient(
+      135deg,
+      var(--primary),
+      var(--highlight)
+    );
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
 }
