@@ -1,55 +1,49 @@
 @import "tailwindcss";
 
+/* ================= ROOT ================= */
 :root {
-  --background: #f6fafd;      /* soft light blue */
-  --foreground: #0a1931;      /* deep navy */
-
-  --primary: #1a3d63;         /* main blue */
-  --accent: #4a7fa7;          /* lighter blue */
-  --muted: #b3cfe5;           /* pastel blue */
-  --highlight: #6d28d9;       /* accent purple */
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a1931;
-    --foreground: #f6fafd;
-  }
+/* ================= BASE ================= */
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: linear-gradient(
-    180deg,
-    var(--background) 0%,
-    #ffffff 40%,
-    var(--muted) 100%
-  );
-  color: var(--foreground);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  background-color: #f9fbfd; /* matches bg-light */
+  color: #1f2937; /* matches textDark */
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
+
+/* ================= UTILITIES ================= */
 @layer utilities {
   .bg-brand {
-    background: linear-gradient(
-      135deg,
-      var(--primary),
-      var(--highlight)
-    );
+    background: linear-gradient(135deg, #7bbbff, #b8a9ff);
   }
 
   .text-accent {
-    color: var(--accent);
+    color: #7bbbff;
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-24px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
   }
 }

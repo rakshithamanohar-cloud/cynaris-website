@@ -2,7 +2,6 @@ import "./globals.css";
 import TopBar from "./components/TopBar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Background from "./components/Background";
 
 export const metadata = {
   title: {
@@ -20,16 +19,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-gray-50 text-gray-900 relative">
-        {/* Accentured-style animated background */}
-        <Background />
+      <body className="min-h-screen bg-white text-[#050F2A]">
+        <div className="flex min-h-screen flex-col">
+          <TopBar />
+          <Header />
 
-        <TopBar />
-        <Header />
+          <main className="flex-grow">{children}</main>
 
-        <main className="flex-grow relative z-10">{children}</main>
-
-        <Footer />
+          <Footer />
+        </div>
       </body>
     </html>
   );

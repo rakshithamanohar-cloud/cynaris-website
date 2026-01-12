@@ -5,49 +5,50 @@ import Link from "next/link";
 
 export default function ServicesPage() {
   const services = [
-    {
-      title: "Staff Augmentation",
-      description:
-        "Flexible staffing solutions that help organizations quickly scale their teams with highly skilled professionals.",
-      link: "/services/staff-augmentation",
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      title: "Custom Software Development",
-      description:
-        "End-to-end software development tailored to business needs, ensuring scalability and performance.",
-      link: "/services/custom-software-development",
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      title: "Scaled Agile Implementation",
-      description:
-        "Enterprise-wide agile transformation to improve collaboration, speed, and delivery outcomes.",
-      link: "/services/scaled-agile-implementation",
-      color: "from-emerald-500 to-teal-500",
-    },
-    {
-      title: "Digital Transformation Services",
-      description:
-        "Modernizing systems, processes, and experiences to help businesses stay competitive.",
-      link: "/services/digital-transformation",
-      color: "from-orange-500 to-amber-500",
-    },
-    {
-      title: "Research and Development",
-      description:
-        "Innovation-driven R&D services to explore emerging technologies and accelerate breakthroughs.",
-      link: "/services/research-and-development",
-      color: "from-indigo-500 to-violet-500",
-    },
-    {
-      title: "Offshore Delivery Center",
-      description:
-        "Cost-effective offshore teams delivering quality, scalability, and operational efficiency.",
-      link: "/services/offshore-delivery-center",
-      color: "from-rose-500 to-red-500",
-    },
-  ];
+  {
+    title: "Staff Augmentation",
+    description:
+      "Flexible staffing solutions that help organizations quickly scale their teams with highly skilled professionals.",
+    link: "/services/services-sub-page/staff-augmentation",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "Custom Software Development",
+    description:
+      "End-to-end software development tailored to business needs, ensuring scalability and performance.",
+    link:"/services/services-sub-page/custom-software-development",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "Scaled Agile Implementation",
+    description:
+      "Enterprise-wide agile transformation to improve collaboration, speed, and delivery outcomes.",
+    link:"/services/services-sub-page/scaled-agile-implementation",
+    color: "from-emerald-500 to-teal-500",
+  },
+  {
+    title: "Digital Transformation Services",
+    description:
+      "Modernizing systems, processes, and experiences to help businesses stay competitive.",
+    link:"/services/services-sub-page/digital-transformation",
+    color: "from-orange-500 to-amber-500",
+  },
+  {
+    title: "Research and Development",
+    description:
+      "Innovation-driven R&D services to explore emerging technologies and accelerate breakthroughs.",
+    link:"/services/services-sub-page/research-and-development",
+    color: "from-indigo-500 to-violet-500",
+  },
+  {
+    title: "Offshore Delivery Center",
+    description:
+      "Cost-effective offshore teams delivering quality, scalability, and operational efficiency.",
+    link:"/services/services-sub-page/offshore-delivery-center",
+    color: "from-rose-500 to-red-500",
+  },
+];
+
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-20">

@@ -1,56 +1,64 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-4">
-        
-        {/* Brand */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-4">
-            Cynaris Solutions
-          </h3>
-          <p className="text-sm leading-relaxed text-gray-400">
-            Delivering scalable, secure, and innovative digital solutions for
-            businesses worldwide.
-          </p>
-        </div>
+    <footer className="relative mt-32">
+      {/* Container */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="rounded-3xl bg-white/80 backdrop-blur-2xl border border-borderLight px-8 py-16 shadow-soft">
+          <div className="grid gap-12 md:grid-cols-3 text-textDim">
 
-        {/* Company */}
-        <div>
-          <h4 className="text-sm font-semibold text-white mb-4">Company</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link href="/about" className="hover:text-white">About</Link></li>
-            <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
-            <li><Link href="/case-studies" className="hover:text-white">Case Studies</Link></li>
-            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-          </ul>
-        </div>
+            {/* Brand */}
+            <div>
+              <h3 className="text-xl font-bold text-textDark mb-4">
+                Cynaris Solutions
+              </h3>
+              <p className="text-sm leading-relaxed">
+                Technology and talent solutions helping organizations scale,
+                modernize, and lead in a digital-first world.
+              </p>
+            </div>
 
-        {/* Services */}
-        <div>
-          <h4 className="text-sm font-semibold text-white mb-4">Services</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link href="/services" className="hover:text-white">Staff Augmentation</Link></li>
-            <li><Link href="/services" className="hover:text-white">Custom Software</Link></li>
-            <li><Link href="/services" className="hover:text-white">Digital Transformation</Link></li>
-            <li><Link href="/services" className="hover:text-white">R&D Services</Link></li>
-          </ul>
-        </div>
+            {/* Links */}
+            <div>
+              <h4 className="text-sm font-semibold text-textDark mb-4">
+                Company
+              </h4>
+              <ul className="space-y-2 text-sm">
+                {["Home", "About", "Services", "Careers"].map((item) => (
+                  <li key={item}>
+                    <Link
+                      href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                      className="hover:text-textDark transition"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        {/* Contact */}
-        <div>
-          <h4 className="text-sm font-semibold text-white mb-4">Contact</h4>
-          <p className="text-sm text-gray-400">
-            contact@cynarissolutions.com <br />
-            +91 98765 43210 <br />
-            India
-          </p>
-        </div>
+            {/* Contact */}
+            <div>
+              <h4 className="text-sm font-semibold text-textDark mb-4">
+                Contact
+              </h4>
+              <p className="text-sm">
+                contact@cynarissolutions.com
+              </p>
+              <p className="text-sm mt-2">
+                Bangalore, India
+              </p>
+            </div>
 
+          </div>
+        </div>
       </div>
 
-      <div className="border-t border-gray-800 text-center py-6 text-sm text-gray-500">
+      {/* Copyright */}
+      <div className="mt-8 text-center text-xs text-muted">
         © {new Date().getFullYear()} Cynaris Solutions. All rights reserved.
       </div>
     </footer>

@@ -7,41 +7,50 @@ import { motion } from "framer-motion";
 export default function Navbar() {
   return (
     <motion.header
-      initial={{ y: -20, opacity: 0 }}
+      initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-black/5"
+      className="fixed top-4 w-full z-50"
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/logo.png"
-            alt="Cynaris Solutions"
-            width={140}
-            height={40}
-            priority
-          />
-        </Link>
+      {/* Floating container */}
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16 rounded-full bg-navy/70 backdrop-blur-xl border border-ice/10 px-8 shadow-lg">
+          
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo.png"
+              alt="Cynaris Solutions"
+              width={130}
+              height={36}
+              priority
+            />
+          </Link>
 
-        {/* NAV LINKS */}
-        <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-[#0A1931]">
-          <Link href="/services" className="hover:text-[#5B3FD1] transition">
-            Services
-          </Link>
-          <Link href="/about" className="hover:text-[#5B3FD1] transition">
-            About
-          </Link>
-          <Link href="/careers" className="hover:text-[#5B3FD1] transition">
-            Careers
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-md bg-[#5B3FD1] px-4 py-2 text-white hover:bg-[#4A35B8] transition"
-          >
-            Contact
-          </Link>
-        </nav>
+          {/* NAV LINKS */}
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-ice/80">
+            <Link href="/" className="hover:text-primary transition">
+              Home
+            </Link>
+            <Link href="/about" className="hover:text-primary transition">
+              About
+            </Link>
+            <Link href="/services" className="hover:text-primary transition">
+              Services
+            </Link>
+            <Link href="/careers" className="hover:text-primary transition">
+              Careers
+            </Link>
+
+            {/* CTA */}
+            <Link
+              href="/contact"
+              className="ml-2 rounded-full bg-gradient-to-r from-primary to-lavender px-5 py-2 text-sm font-semibold text-navy hover:opacity-90 transition"
+            >
+              Contact
+            </Link>
+          </nav>
+        </div>
       </div>
     </motion.header>
   );

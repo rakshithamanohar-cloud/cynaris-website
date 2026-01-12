@@ -1,42 +1,84 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Careers", href: "/careers" },
+    { label: "Contact", href: "/contact" },
+  ];
+
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/logo.png"
-            alt="Cynaris Solutions"
-            width={150}
-            height={40}
-            priority
-          />
-        </Link>
+    <header className="fixed top-0 left-0 w-full z-50 shadow-md">
+      {/* Top info bar */}
+      <div className="bg-[#0A1931] text-white text-sm">
+        <div className="max-w-7xl mx-auto px-6 py-2 flex justify-between">
+          <span>contact@cynarissolutions.com</span>
+          <span>+91 98765 43210 • India</span>
+        </div>
+      </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
-          <Link href="/about" className="hover:text-blue-600">About</Link>
-          <Link href="/services" className="hover:text-blue-600">Services</Link>
-          <Link href="/case-studies" className="hover:text-blue-600">
-            Case Studies
+      {/* Main navbar */}
+      <div className="backdrop-blur-xl bg-white/70">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="text-xl font-semibold text-[#0A1931]"
+            onClick={() => setMenuOpen(false)}
+          >
+            Cynaris Solutions
           </Link>
-          <Link href="/careers" className="hover:text-blue-600">Careers</Link>
-          <Link href="/contact" className="hover:text-blue-600">Contact</Link>
-        </nav>
 
-        {/* CTA */}
-        <Link
-          href="/contact"
-          className="hidden md:inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition"
-        >
-          Talk to Us
-        </Link>
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex gap-8 text-sm font-medium text-[#0A1931]">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="hover:text-blue-600 transition"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
+            className="md:hidden text-[#0A1931]"
+          >
+            {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile navigation */}
+        {menuOpen && (
+          <nav className="md:hidden bg-white/95 backdrop-blur-xl shadow-lg">
+            <ul className="flex flex-col gap-4 px-6 py-6 text-[#0A1931] font-medium">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="block hover:text-blue-600 transition"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );
