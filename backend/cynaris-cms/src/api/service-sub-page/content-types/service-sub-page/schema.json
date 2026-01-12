@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_sub_pages",
+  "info": {
+    "singularName": "service-sub-page",
+    "pluralName": "service-sub-pages",
+    "displayName": "ServiceSubPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::service.service"
+    }
+  }
+}
