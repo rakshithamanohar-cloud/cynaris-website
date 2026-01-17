@@ -26,4 +26,24 @@ This project includes:
   - Quote submissions
 
 ## 📁 Folder Structure
+cynaris-website/
+├── backend/
+│ └── cynaris-cms/
+│ └── src/
+│ └── api/
+│ ├── contact-submission/
+│ ├── job-posting/
+│ └── quote-submission/
+├── frontend/
+│ └── my-app/
+│ ├── app/
+│ ├── public/
+│ └── package.json
+├── .gitignore
+└── README.md
 
+## 🛠️ Technologies Used
+
+- **Frontend:** Next.js, React, TypeScript, CSS
+- **Backend:** Node.js, TypeScript
+- **Version Control:** Git & GitHub
