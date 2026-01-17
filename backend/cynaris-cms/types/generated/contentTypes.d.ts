@@ -467,31 +467,63 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiServiceSubPageServiceSubPage
+export interface ApiContactSubmissionContactSubmission
   extends Struct.CollectionTypeSchema {
-  collectionName: 'service_sub_pages';
+  collectionName: 'contact_submissions';
   info: {
-    displayName: 'ServiceSubPage';
-    pluralName: 'service-sub-pages';
-    singularName: 'service-sub-page';
+    displayName: 'Contact Submission';
+    pluralName: 'contact-submissions';
+    singularName: 'contact-submission';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::service-sub-page.service-sub-page'
+      'api::contact-submission.contact-submission'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer;
+    message: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    service: Schema.Attribute.Relation<'oneToOne', 'api::service.service'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiJobPostingJobPosting extends Struct.CollectionTypeSchema {
+  collectionName: 'job_postings';
+  info: {
+    displayName: 'job-posting';
+    pluralName: 'job-postings';
+    singularName: 'job-posting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    applyLink: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    employmentType: Schema.Attribute.String;
+    isActive: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::job-posting.job-posting'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -500,33 +532,40 @@ export interface ApiServiceSubPageServiceSubPage
   };
 }
 
-export interface ApiServiceService extends Struct.CollectionTypeSchema {
-  collectionName: 'services';
+export interface ApiQuoteSubmissionQuoteSubmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'quote_submissions';
   info: {
-    displayName: 'Service';
-    pluralName: 'services';
-    singularName: 'service';
+    displayName: 'quote-submission';
+    pluralName: 'quote-submissions';
+    singularName: 'quote-submission';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Blocks;
+    address: Schema.Attribute.String;
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    city: Schema.Attribute.String;
+    company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Email: Schema.Attribute.Email;
+    fullName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::service.service'
+      'api::quote-submission.quote-submission'
     > &
       Schema.Attribute.Private;
-    order: Schema.Attribute.Integer;
+    message: Schema.Attribute.Text;
+    phone: Schema.Attribute.String;
+    preferredContact: Schema.Attribute.Enumeration<['Phone,', 'Email']>;
     publishedAt: Schema.Attribute.DateTime;
-    shortDescription: Schema.Attribute.Text;
-    slug: Schema.Attribute.UID<'title'>;
-    title: Schema.Attribute.String;
+    services: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1044,8 +1083,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::service-sub-page.service-sub-page': ApiServiceSubPageServiceSubPage;
-      'api::service.service': ApiServiceService;
+      'api::contact-submission.contact-submission': ApiContactSubmissionContactSubmission;
+      'api::job-posting.job-posting': ApiJobPostingJobPosting;
+      'api::quote-submission.quote-submission': ApiQuoteSubmissionQuoteSubmission;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -12,8 +12,8 @@ body {
 }
 
 body {
-  background-color: #f9fbfd; /* matches bg-light */
-  color: #1f2937; /* matches textDark */
+  background-color: #f9fbfd;
+  color: #1f2937;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -47,3 +47,4 @@ body {
     transform: translateY(0px) rotate(0deg);
   }
 }
+

@@ -178,7 +178,7 @@ We are proud to hold ISO 9001:2015, ISO 27001, and ISO 22301 certifications, whi
               href="/contact"
               className="inline-block rounded-full bg-blue-600 px-8 py-3 text-white font-medium transition hover:bg-blue-700"
             >
-              Get A Quote
+              Contact Us
             </a>
           </div>
         </div>
